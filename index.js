@@ -23,6 +23,11 @@ async function run(){
     try{
         const classCollection = client.db('fitWithRahat').collection('classes');
 
+        app.post('/jwt', (req, res)=>{
+            const user = req.body;
+            console.log(user);
+        })
+
         app.get('/classes', async(req, res)=>{
             const query ={};
             const cursor = classCollection.find(query);
